@@ -40,7 +40,7 @@ labels: {}
 ingress:
   ## If true, Prometheus Ingress will be created
   ##
-  enabled: false
+  enabled: true
 
   ## Annotations for Prometheus Ingress
   ##
@@ -52,7 +52,7 @@ ingress:
   ##
   labels: {}
 
-  fqdn: ""
+  fqdn: "prometheus.use1.geoquant.io"
 
   ## TLS configuration for Prometheus Ingress
   ## Secret must be manually created in the namespace

@@ -54,7 +54,11 @@ spec:
         image: {{ .Values.grafanaWatcher.repository }}:{{ .Values.grafanaWatcher.tag }}
         args:
           - '--watch-dir=/var/grafana-dashboards'
+          {{ if .Values.ingress.enabled  }}
+          - '--grafana-url=https://{{ .Values.ingress.fqdn }}'
+          {{ else }}
           - '--grafana-url=http://localhost:3000'
+          {{- end }}
         env:
         - name: GRAFANA_USER
           valueFrom:

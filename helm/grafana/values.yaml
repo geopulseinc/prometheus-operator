@@ -48,13 +48,13 @@ grafanaWatcher:
   repository: quay.io/coreos/grafana-watcher
   tag: v0.0.8
 
-storageSpec: {}
-#   class: default
-#   accessMode:
-#   resources:
-#     requests:
-#       storage: 2Gi
-#   selector: {}
+storageSpec:
+   class: default
+   accessMode: ReadWriteOnce
+   resources:
+     requests:
+       storage: 4Gi
+   selector: {}
 
 resources: {}
   # requests:
